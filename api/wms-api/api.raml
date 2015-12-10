@@ -1,0 +1,35 @@
+#%RAML 0.8
+---
+title: WMS API
+baseUri: https://bapi.bring.com/wmsService/1.0
+
+documentation:
+- title: Introduction
+  content: |
+    The API lets you create orders for the Warehouse system.
+
+    The following schema can be used to validate / generate the request: [CreateCustomerOrder-V1.xsd](/api/wms-api/schemas/CreateCustomerOrder-V1.xsd)
+
+- title: Authentication
+  content: |
+    The Easy Return Service API requires authentication for all its endpoints. See the [getting started guide on authentication](/api/#authentication) if you're not sure what this means.
+
+    | Header | Example | Comment |
+    |:-------|:--------|:--------|
+    | `X-MyBring-API-Uid` | `john.doe@example.com` | Mybring login ID |
+    | `X-MyBring-API-Key` | `1234abc-abcd-1234-5678-abcd1234abcd ` | Mybring login's API key |
+
+    Those headers must be set for all endpoints documented below.
+
+/CreateCustomerOrder:
+  displayName: Create new order
+  post:
+    description: Create new order
+    body:
+      application/xml:
+        example: !include examples/request.xml
+    responses:
+      200:
+        body:
+          application/xml:
+            example: !include examples/response.xml

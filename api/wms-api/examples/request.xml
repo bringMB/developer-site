@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n1:CreateCustomerOrder messageFunction="Order" messageId="12345" xmlns:n1="http://bapi.bring.com/wmsService/1.0">
+	<CustomerOrder orderId="1253" updateIndicator="Original">
+		<DateAndTimes subClass="DocumentDate">
+			<Date>2015-09-11</Date>
+			<Time>09:49:32.0Z</Time>
+		</DateAndTimes>
+		<Party subClass="Seller" partyId="SELLERID">
+			<Name>Example seller</Name>
+			<Address subClass="PhysicalAddress">
+				<PostalCode>2000</PostalCode>
+				<City>LILLESTRØM</City>
+				<CountryCode>NO</CountryCode>
+				<AddressLineOne>Example street 76</AddressLineOne>
+			</Address>
+			<Contact>
+				<PhoneNo>11223344</PhoneNo>
+				<EMailAddress>seller@seller.no</EMailAddress>
+				<WebAddress>http://www.customer-store.no</WebAddress>
+			</Contact>
+		</Party>
+		<Party subClass="Buyer" partyId="BUYERID">
+			<Name>Buyer name</Name>
+			<Address subClass="PhysicalAddress">
+				<PostalCode>0864</PostalCode>
+				<City>OSLO</City>
+				<CountryCode>NO</CountryCode>
+				<AddressLineOne>Example street 2</AddressLineOne>
+			</Address>
+			<Contact>
+				<CellPhoneNo>44332211</CellPhoneNo>
+				<EMailAddress>buyer@ExampleMail.com</EMailAddress>
+			</Contact>
+		</Party>
+		<Party subClass="DeliveryParty" partyId="BUYERID">
+			<Name>Buyer name</Name>
+			<Address subClass="PhysicalAddress">
+				<PostalCode>1088</PostalCode>
+				<City>OSLO</City>
+				<CountryCode>NO</CountryCode>
+				<AddressLineOne>ANOTHER DELIVERY ADDRESS</AddressLineOne>
+			</Address>
+			<Contact>
+				<CellPhoneNo>44332211</CellPhoneNo>
+				<EMailAddress>buyer@ExampleMail.com</EMailAddress>
+			</Contact>
+		</Party>
+		<TransportService>
+			<BasicServiceCode>SERVICEPAKKE</BasicServiceCode>
+		</TransportService>
+		<OrderLineSet>
+			<OrderItem articleLineId="1">
+				<ArticleId>1234</ArticleId>
+				<ArticleQuantity>1</ArticleQuantity>
+				<ArticleVariance>15</ArticleVariance>
+				<PackageTypeCode>STK</PackageTypeCode>
+				<Description usageCode="AAA">
+					<Text>Article desription</Text>
+                    <LanguageCode>NO</LanguageCode>
+				</Description>
+				<ArticleMonetaryAmounts>
+					<UnitPrice currencyIdentificationCode="NOK">80.26</UnitPrice>
+					<ArticleTax>
+						<TaxType>MVA</TaxType>
+						<ArticleTaxRate>15</ArticleTaxRate>
+					</ArticleTax>
+				</ArticleMonetaryAmounts>
+			</OrderItem>
+			<OrderItem articleLineId="2">
+				<ArticleId>4321</ArticleId>
+				<ArticleQuantity>1</ArticleQuantity>
+				<PackageTypeCode>STK</PackageTypeCode>
+				<Description usageCode="AAA">
+					<Text>Article desription</Text>
+                    <LanguageCode>NO</LanguageCode>
+				</Description>
+				<ArticleMonetaryAmounts>
+					<UnitPrice currencyIdentificationCode="NOK">50.61</UnitPrice>
+					<ArticleTax>
+						<TaxType>MVA</TaxType>
+						<ArticleTaxRate>15</ArticleTaxRate>
+					</ArticleTax>
+				</ArticleMonetaryAmounts>
+			</OrderItem>
+		</OrderLineSet>
+	</CustomerOrder>
+</n1:CreateCustomerOrder>
